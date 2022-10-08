@@ -1,0 +1,85 @@
+
+
+How to compile
+==============
+
+1) Get Windows PC. (or install the PC emulator and OS.) 
+(windows 7 / XP / 98, etc ...)
+
+2) Install Minimalist PSP homebrew SDK for Windows.
+It source code used version 0.11.2r3(Last Update 2011-07-05)
+http://sourceforge.net/projects/minpspw/
+Download pspsdk-setup-0.11.2r3.exe (34.2 MB)
+
+3) This arcive extract to C:\Users\windows_login_name\srcr44
+windows_login_name == Your Windows Login name.
+
+4) Start menu type 'cmd[Enter]'.(command prompt) 
+   (if before windows 98, replace type 'command[Enter]'.)
+
+5) cmd console in type 'cd srcr44[Enter]'.
+   (if before windows 98, add after type 'start.bat[Enter]'.)
+
+6) cmd console in type 'make[Enter]'.
+
+7) Just maked EBOOT.PBP.
+
+
+
+How to compile for windows 98/95
+================================
+
+ You create a new file. that named the "start.bat". and 
+written in file, following after two lines.
+
+rem set PATH=%PATH%;C:\pspsdk\bin
+set PATH=C:\WINDOWS;C:\WINDOWS\COMMAND;C:\pspsdk\bin
+
+
+
+How to compile for devkitPSP
+============================
+
+# ----------------
+# add make tools.
+# ----------------
+
+C:\pspsdk\bin\make.exe
+C:\pspsdk\bin\mkdir.exe
+C:\pspsdk\bin\rm.exe
+
+# ----------------
+# add lib include header source files.
+# ----------------
+
+for zlib
+C:\pspsdk\psp\include\zlib.h
+C:\pspsdk\psp\include\zconf.h
+
+for libmad
+C:\pspsdk\psp\include\mad.h
+
+# ----------------
+# add lib objects.
+# ----------------
+
+for zlib
+C:\pspsdk\psp\lib\libz.a
+
+for libmad
+C:\pspsdk\psp\lib\libmad.a
+
+
+
+If non Japan
+============
+
+ This is Japanese game & data. Not support english, etc but ...
+You can modified this.(license GPL2)
+
+ EBOOT.PBP modify.(optional)
+ If used select laguage english, modify Makefile uncommented this.
+ CFLAGS += -DUSE_LANGUAGE_ENGLISH=1
+and deleted 'C:\Users\windows_login_name\srcr44\obj\game_core\*.*'
+when compile.
+
